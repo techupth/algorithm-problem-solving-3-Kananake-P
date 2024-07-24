@@ -1,18 +1,9 @@
 function sortStudentsByScore(students) {
   // เริ่มเขียนโค้ดตรงนี้จ้า
-  const n = students.length;
   let result = [];
-  for (let i = 0; i < n - 1; i++) {
-    for (let j = 0; j < n - 1; j++) {
-      if (students[j].score < students[j + 1].score) {
-        let temp = students[j].score;
-        students[j].score = students[j + 1].score;
-        students[j + 1].score = temp;
-        result = students;
-      }
-    }
-  }
-  return result;
+  return (result = students.sort((a, b) => {
+    return b.score - a.score;
+  }));
 }
 
 console.log(
@@ -25,3 +16,20 @@ console.log(
     { id: "S006", name: "Fah", score: 80 },
   ])
 );
+
+// function sortStudentsByScore(students) {
+//   // เริ่มเขียนโค้ดตรงนี้จ้า
+//   const n = students.length;
+//   let result;
+//   for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - 1; j++) {
+//       if (students[j].score < students[j + 1].score) {
+//         let temp = students[j].score;
+//         students[j].score = students[j + 1].score;
+//         students[j + 1].score = temp;
+//         result = students;
+//       }
+//     }
+//   }
+//   return result;
+// }
